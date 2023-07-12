@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Productos</h1>
+    <form action="/productos" method="get">
+        <label for="categoria">Selecciona una categoría:</label>
+        <select name="categoria" id="categoria">
+            <option value="">Todas las categorías</option>
+            <option value="camisas">Camisas</option>
+            <option value="pantalones">Pantalones</option>
+            <option value="zapatos">Zapatos</option>
+        </select>
+        <input type="submit" value="Filtrar">
+    </form>
+    <br>
+    <form action="/productos" method="get">
+        <label for="busqueda">Buscar por categoría:</label>
+        <input type="text" name="busqueda" id="busqueda" placeholder="Escribe una categoría">
+        <input type="submit" value="Buscar">
+    </form>
+    <br>
+    <div class="productos">
+        {% if productos %}
+            {% for producto in productos %}
+            <div class="producto">
+                <img src="{{ url_for('static', filename='images/' + producto['imagen']) }}" alt="{{ producto['nombre'] }}" width="150" height="150">
+                <h3>{{ producto['nombre'] }}</h3>
+                <p class="descripcion">{{ producto['descripcion'] }}</p>
+                <p class="precio">Precio: ${{ producto['precio'] }}</p>
+            </div>
+            <br>
+            {% endfor %}
+        {% else %}
+            <p>No hay productos disponibles en esta categoría.</p>
+        {% endif %}
+    <footer>
+        <div class="container">
+            <p>© 2023 Tienda en Línea. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

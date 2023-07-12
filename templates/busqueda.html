@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de búsqueda</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Resultados de búsqueda</h2>
+    <p>Categoría: {{ categoria }}</p>
+    <p>Término de búsqueda: {{ query }}</p>
+    <ul>
+        {% for producto in resultados %}
+            <li>{{ producto }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

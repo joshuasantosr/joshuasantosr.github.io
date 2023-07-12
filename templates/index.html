@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda en línea</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Tienda en Línea</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/productos">Productos</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Bienvenido a nuestra tienda en línea</h2>
+    <p>Elige una categoría:</p>
+    <ul>
+        <hr size="25px" color= #f9f9f9 />
+        <li><a href="/productos?categoria=camisas">Camisas</a></li>
+         <hr size="25px" color= #f9f9f9 />
+        <li><a href="/productos?categoria=pantalones">Pantalones</a></li>
+        <hr size="25px" color= #f9f9f9 />
+        <li><a href="/productos?categoria=zapatos">Zapatos</a></li>
+        <hr size="25px" color= #f9f9f9 />
+    </ul>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Tienda en Línea. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

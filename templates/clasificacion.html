@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos clasificados</title>
+</head>
+<body>
+    <h2>Productos clasificados</h2>
+    <p>Categoría: {{ categoria }}</p>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
